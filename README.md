@@ -1,10 +1,7 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler
 
+## Given prompt and User Story
 Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
-
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
-
-## User Story
 
 ```
 AS AN employee with a busy schedule
@@ -32,15 +29,12 @@ THEN the saved events persist
 
 The following animation demonstrates the application functionality:
 
-![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
+![day planner demo](./05-third-party-apis-homework-demo.gif)
 
-## Review
+## Approach to given scenario.
+1. Use Moment.js to gather date info from browser and parse into usable format. 
+2. Check to see if local storage for list items is present. If not populate blank time blocks for work hours. 
+    - If local storage exist populate time blocks and add existing info. 
+3. Add function to color time blocks according to wether or not they are in past or present. 
+4. Add click-event to save-button to save typed data into local storage for that time slot. 
 
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
