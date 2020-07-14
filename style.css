@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -25,18 +25,19 @@ a {
   border-bottom: 10px solid black;
 }
 
+/* Added some styling to Current date */
 #currentDay {
-font-size: x-large !important;
-font-weight: bold;
-color: #06AED5;
-margin-top: 30px;
+  font-size: x-large !important;
+  font-weight: bold;
+  color: #06aed5;
+  margin-top: 30px;
 }
 
-.description{
+.description {
   white-space: pre-wrap;
 }
 
-.time-block{
+.time-block {
   text-align: center;
   border-radius: 15px;
 }
@@ -44,7 +45,7 @@ margin-top: 30px;
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
 }
 
 .hour {
@@ -55,6 +56,7 @@ margin-top: 30px;
   font-weight: bold;
 }
 
+/* Removed White Color from .past, .present, and .future to match example given */
 .past {
   background-color: #d3d3d3;
 }
@@ -71,11 +73,11 @@ margin-top: 30px;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  background-color: #06aed5;
   color: white;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
