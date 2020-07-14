@@ -6,6 +6,7 @@ var containerEl = $(".container");
 // Create Global Variables for function reference
 var toDoItems = [];
 var toDoHour = "";
+var i = 0;
 
 // Creates variables using moment().
 var today = moment().format("dddd, MMMM Do");
@@ -20,6 +21,10 @@ if (storedToDoItems !== null) {
 } else {
     toDoItems = ["", "", "", "", "Eat Lunch", "", "", "", "", ""];
 };
+
+// Display Current Day on page.
+currentDayEl.text(today);
+
 
 // Begin Creating rows with times by hour , form field, and save button. 
 for (var time = 8; time < 18; time++) {
@@ -37,24 +42,20 @@ for (var time = 8; time < 18; time++) {
     description.attr("type", "text");
     description.text(toDoItems[i]);
     var saveBlock = $("<div>");
-    saveBlock.addClass("col-md-1 saveBtn far fa-save");
-    saveBlock.attr("id", i);
+    saveBlock.addClass("col-md-1 saveBtn");
+    var saveSymbol = $("<a>");
+    saveSymbol.addClass("far fa-save");
+    saveSymbol.attr("save-id", i);
+    saveBlock.append(saveSymbol);
 
     rowColor(time, hours24);
 
     timeSlot.append(timeBlock, description, saveBlock);
-    // timeSlot.append(description);
-    // timeSlot.append(saveBlock);
+    timeSlot.append(description);
+    timeSlot.append(saveBlock);
     containerEl.append(timeSlot);
 
 };
-
-
-
-
-
-
-
 
 // Function to set AM vs PM on calendar hour.  
 function setTimeDisplay(time) {
@@ -76,11 +77,17 @@ function rowColor() {
     };
 };
 
+// Add click event to save element to local storage. 
+$("a").on("click", function(event) {
+    event.preventDefault();
+    var j = $(this).attr("save-id");
+    var descriptionToSave = $("#" + j).val();
+    toDoItems[j] = descriptionToSave;
+    localStorage.setItem("ToDoItems", JSON.stringify(toDoItems));
+})
 
 
 
-
-currentDayEl.text(today);
 
 
 
