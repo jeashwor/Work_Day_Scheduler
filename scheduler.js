@@ -42,9 +42,9 @@ for (var time = 8; time < 18; time++) {
 
     rowColor(time, hours24);
 
-    timeSlot.append(timeBlock);
-    timeSlot.append(description);
-    timeSlot.append(saveBlock);
+    timeSlot.append(timeBlock, description, saveBlock);
+    // timeSlot.append(description);
+    // timeSlot.append(saveBlock);
     containerEl.append(timeSlot);
 
 };
