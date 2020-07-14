@@ -33,19 +33,19 @@ for (var time = 8; time < 18; time++) {
     timeSlot.attr("time-slot", (time - 8));
     // create dive for time display.
     var timeBlock = $("<div>");
-    timeBlock.addClass("col-md-2 hour");
+    timeBlock.addClass("col-sm-1 hour");
     setTimeDisplay(time);
     timeBlock.text(toDoHour);
     // Create text area for input field to be saved. 
     var description = $("<textarea>");
-    description.addClass("col-md-9 description")
+    description.addClass("col-sm-10 description")
     description.attr("id", i);
     description.attr("type", "text");
     description.text(toDoItems[i]);
     // Create save icon area.
     var saveBlock = $("<div>");
-    saveBlock.addClass("col-md-1 saveBtn");
-    var saveSymbol = $("<a>");
+    saveBlock.addClass("col-sm-1 saveBtn");
+    var saveSymbol = $("<i>");
     saveSymbol.addClass("far fa-save");
     saveSymbol.attr("save-id", i);
     saveBlock.append(saveSymbol);
@@ -80,7 +80,7 @@ function rowColor() {
 };
 
 // Add click event to save element to local storage. 
-$("a").on("click", function (event) {
+$("i").on("click", function (event) {
     event.preventDefault();
     var j = $(this).attr("save-id");
     var descriptionToSave = $("#" + j).val();
