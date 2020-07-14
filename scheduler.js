@@ -10,7 +10,7 @@ var i = 0;
 
 // Creates variables using moment().
 var today = moment().format("dddd, MMMM Do");
-var hours24 = moment().format("H");
+var hours24 = (moment().format("H") -10);
 
 // Get stored ToDoItems if they exist in local storage
 var storedToDoItems = JSON.parse(localStorage.getItem("ToDoItems"));
