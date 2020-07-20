@@ -44,10 +44,10 @@ for (var time = 8; time < 18; time++) {
     description.text(toDoItems[i]);
     // Create save icon area.
     var saveBlock = $("<div>");
-    saveBlock.addClass("col-sm-1 saveBtn");
+    saveBlock.addClass("col-sm-1 saveBtn pointer");
+    saveBlock.attr("save-id", i);
     var saveSymbol = $("<i>");
     saveSymbol.addClass("far fa-save");
-    saveSymbol.attr("save-id", i);
     saveBlock.append(saveSymbol);
     // call function to set row color.
     rowColor(time, hours24);
@@ -80,7 +80,7 @@ function rowColor() {
 };
 
 // Add click event to save element to local storage. 
-$("i").on("click", function (event) {
+$(".saveBtn").on("click", function (event) {
     event.preventDefault();
     var j = $(this).attr("save-id");
     var descriptionToSave = $("#" + j).val();
