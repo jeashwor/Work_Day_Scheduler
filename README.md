@@ -1,5 +1,9 @@
 # Work Day Scheduler
 
+Link: https://jeashwor.github.io/Work_Day_Scheduler/
+
+Github Repo: https://github.com/jeashwor/Work_Day_Scheduler
+
 ![Screen_Shot](./assets/ScreenShot.png)
 
 ## Given prompt and User Story
